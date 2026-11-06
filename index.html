@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101018">
+  <title>Jujutsu: Cursed Clash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app">
+    <section class="screen home active" id="homeScreen">
+      <div class="home-noise"></div><div class="vertical-word">呪術廻戦</div>
+      <header class="topbar"><a class="brand" href="#" aria-label="Inicio"><span class="brand-mark">呪</span><span>CURSED<span class="brand-muted"> CLASH</span></span></a><span class="edition">FAN GAME · COMBATE 2D</span></header>
+      <div class="hero-copy"><div class="eyebrow"><i></i> ELIGE TU DESTINO</div><h1>LA ENERGÍA<br><span>MALDITA</span><br>DESPIERTA.</h1><p>Entra al combate. Domina tu técnica.<br>Que sobreviva el más fuerte.</p><button class="primary-btn" id="playButton"><span>ELIGE A TU LUCHADOR</span><b>↗</b></button><div class="hero-foot"><span>01 — 06</span><span class="rule"></span><span>TOKIO · 2018</span></div></div>
+      <div class="hero-art" aria-hidden="true"><div class="art-halo"></div><div class="art-slash slash-one"></div><div class="art-slash slash-two"></div><div class="hero-person"><div class="hero-coat"></div><div class="hero-neck"></div><div class="hero-face"><div class="hero-blindfold"></div><div class="hero-hair"></div></div><div class="hero-torso"></div><div class="hero-arm"></div></div><div class="art-caption">五条 悟 <span>THE HONORED ONE</span></div><div class="art-index">無<br>限</div></div>
+      <div class="home-bottom"><span>UNIVERSO JUJUTSU KAISEN</span><span>UN JUEGO DE FANS NO OFICIAL</span><span>← → PARA NAVEGAR</span></div>
+    </section>
+
+    <section class="screen select-screen" id="selectScreen">
+      <header class="select-header"><button class="back-btn" id="backHome">← <span>INICIO</span></button><div class="select-title"><span class="eyebrow">PRIMER PASO</span><h2>ELIGE TU <em>HECHICERO</em></h2></div><div class="player-tag"><span class="player-dot"></span> JUGADOR 1</div></header>
+      <div class="select-layout"><div class="roster" id="roster" aria-label="Personajes"></div><div class="fighter-panel" id="fighterPanel"><div class="fighter-glow"></div><div class="fighter-portrait" id="fighterPortrait"></div><div class="fighter-info"><div class="fighter-number" id="fighterNumber">01 / 06</div><h3 id="fighterName">YUJI ITADORI</h3><div class="fighter-sub" id="fighterSub">HECHICERO DE PRIMER AÑO</div><p id="fighterQuote"></p><div class="stats" id="fighterStats"></div><div class="skin-heading"><span>ASPECTO</span><span id="skinCount">01 / 03</span></div><div class="skin-list" id="skinList"></div><button class="primary-btn fight-btn" id="fightButton"><span>ENTRAR AL COMBATE</span><b>↗</b></button></div></div></div>
+      <footer class="select-footer"><span>← → NAVEGAR PERSONAJES</span><span>ELIGE TU ASPECTO · CADA VERSIÓN TIENE SU ESTILO</span><span>FIGHT / ENTER PARA LUCHAR</span></footer>
+    </section>
+
+    <section class="screen battle-screen" id="battleScreen"><div class="battle-hud"><div class="combatant"><div class="combatant-label"><span id="playerName">YUJI ITADORI</span><span id="playerTag">HECHICERO</span></div><div class="health-track"><div class="health-fill player-health" id="playerHealth"></div></div><div class="meter-track"><div class="meter-fill" id="playerMeter"></div></div></div><div class="round-mark"><span>呪</span><small>ROUND<br>01</small></div><div class="combatant enemy-combatant"><div class="combatant-label"><span id="enemyName">RYOMEN SUKUNA</span><span>CPU · HECHICERO</span></div><div class="health-track"><div class="health-fill enemy-health" id="enemyHealth"></div></div><div class="meter-track"><div class="meter-fill enemy-meter" id="enemyMeter"></div></div></div></div><div class="arena-label"><span>学校 técnica de hechicería · Tokio</span><span id="battleTimer">90</span><span>夜 · MALDICIÓN DETECTADA</span></div><canvas id="gameCanvas" aria-label="Arena de combate"></canvas><div class="battle-hint" id="battleHint"><b>J</b> GOLPE <b>K</b> TÉCNICA <b>L</b> ESQUIVAR <span>·</span> <b>WASD</b> MOVER</div><div class="touch-controls"><div class="touch-move"><button data-key="a">◀</button><button data-key="w">▲</button><button data-key="s">▼</button><button data-key="d">▶</button></div><div class="touch-action"><button data-key="j">GOLPE</button><button data-key="k">TÉCNICA</button><button data-key="l">ESQUIVAR</button></div></div><div class="battle-overlay" id="battleOverlay"><div class="result-kicker">EL VELO SE DISIPA</div><h2 id="resultTitle">VICTORIA</h2><p id="resultCopy">La maldición ha sido exorcizada.</p><div class="result-actions"><button class="primary-btn" id="rematchButton"><span>REVANCHA</span><b>↻</b></button><button class="text-btn" id="rosterButton">CAMBIAR LUCHADOR ↗</button></div></div></section>
+    <div class="toast" id="toast" aria-live="polite"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
